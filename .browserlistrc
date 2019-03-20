@@ -1,0 +1,12 @@
+# Browsers that we support
+
+# Desktop browsers
+Edge >= 15
+Safari >= 10
+last 4 Chrome versions
+last 4 Firefox versions
+last 4 Opera versions
+
+# Mobile browsers
+iOS >= 10
+Android >= 5

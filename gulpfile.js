@@ -6,6 +6,7 @@ const del = require(`del`);
 const debug = require(`gulp-debug`);
 const terser = require(`gulp-terser`);
 const postcss = require(`gulp-postcss`);
+const plumber = require(`gulp-plumber`);
 const rename = require(`gulp-rename`);
 const svgstore = require(`gulp-svgstore`);
 const webp = require(`gulp-webp`);
@@ -26,6 +27,8 @@ const sourcemaps = require(`gulp-sourcemaps`);
 
 gulp.task(`css`, function () {
   return gulp.src(`src/pcss/style.pcss`)
+  .pipe(debug({title: `debug`}))
+  .pipe(plumber())
   .pipe(postcss([
     mixins(),
     postcssImport(),
@@ -36,7 +39,7 @@ gulp.task(`css`, function () {
       nesting: false,
       extend: false
     }),
-    variables(),
+    // variables(),
     postcssPresetEnv(),
     mqpacker({
       sort: true
@@ -44,6 +47,8 @@ gulp.task(`css`, function () {
     minify({comments: `none`})
   ]))
   .pipe(rename({extname: `.css`}))
+  .pipe(gulp.dest(`build/css`))
+  .pipe(rename({extname: `.min.css`}))
   .pipe(gulp.dest(`build/css`, {sourcemaps: `.`}));
 });
 
@@ -111,7 +116,7 @@ gulp.task(`clean`, function () {
 });
 
 gulp.task(`js`, () => {
-  return gulp.src([`src/index.js`])
+  return gulp.src([`src/js/index.js`])
       .pipe(debug({title: `debug`}))
       .pipe(plumber())
       .pipe(sourcemaps.init())
