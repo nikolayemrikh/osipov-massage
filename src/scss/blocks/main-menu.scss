@@ -1,0 +1,18 @@
+.main-menu {
+  display: flex;
+  flex-direction: column;
+
+  @include list();
+}
+
+.main-menu__item {
+  padding: 10px;
+
+  background-color: $blue--dark2;
+
+  border: 1px solid $blue--dark3;
+}
+
+.main-menu__item > a {
+  color: $blue--light4;
+}

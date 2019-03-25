@@ -1,6 +1,7 @@
 
 
 const gulp = require(`gulp`);
+const autoprefixer = require(`autoprefixer`);
 const imagemin = require(`gulp-imagemin`);
 const del = require(`del`);
 const debug = require(`gulp-debug`);
@@ -10,12 +11,7 @@ const plumber = require(`gulp-plumber`);
 const rename = require(`gulp-rename`);
 const svgstore = require(`gulp-svgstore`);
 const webp = require(`gulp-webp`);
-const variables = require(`postcss-css-variables`);
-const postcssPresetEnv = require(`postcss-preset-env`);
-const minify = require(`postcss-csso`);
-const postcssImport = require(`postcss-import`);
-const mixins = require(`postcss-mixins`);
-const precss = require(`precss`);
+const scss = require(`gulp-sass`);
 const rollup = require(`gulp-better-rollup`);
 const mqpacker = require(`css-mqpacker`);
 const server = require(`browser-sync`).create();
@@ -26,30 +22,22 @@ const json = require(`rollup-plugin-json`);
 const sourcemaps = require(`gulp-sourcemaps`);
 
 gulp.task(`css`, function () {
-  return gulp.src(`src/pcss/style.pcss`)
+  return gulp.src(`src/scss/style.scss`)
   .pipe(debug({title: `debug`}))
   .pipe(plumber())
+  .pipe(scss())
   .pipe(postcss([
-    mixins(),
-    postcssImport(),
-    precss({
-      import: false,
-      variables: false,
-      properties: false,
-      nesting: false,
-      extend: false
-    }),
-    // variables(),
-    postcssPresetEnv(),
+    autoprefixer(),
     mqpacker({
       sort: true
     }),
-    minify({comments: `none`})
+    // minify({comments: `none`})
   ]))
   .pipe(rename({extname: `.css`}))
   .pipe(gulp.dest(`build/css`))
   .pipe(rename({extname: `.min.css`}))
-  .pipe(gulp.dest(`build/css`, {sourcemaps: `.`}));
+  .pipe(gulp.dest(`build/css`, {sourcemaps: `.`}))
+  .pipe(server.stream());
 });
 
 gulp.task(`images`, function () {
@@ -79,7 +67,8 @@ gulp.task(`sprite`, function () {
 
 gulp.task(`html`, function () {
   return gulp.src(`src/*.html`)
-    .pipe(gulp.dest(`build`));
+    .pipe(gulp.dest(`build`))
+    .pipe(server.stream());
 });
 
 gulp.task(`server`, function () {
@@ -91,8 +80,9 @@ gulp.task(`server`, function () {
     ui: false
   });
 
-  gulp.watch(`src/sass/**/*.{scss,sass}`, gulp.series(`css`));
-  gulp.watch(`src/*.html`).on(`change`, gulp.series(`html`, server.reload));
+  gulp.watch(`src/scss/**/*.{scss,sass}`, gulp.series(`css`));
+  gulp.watch(`src/*.html`, gulp.series(`html`));
+  gulp.watch(`src/**/*.js`, gulp.series(`js`, `refresh`));
 });
 
 gulp.task(`refresh`, function (done) {
@@ -116,7 +106,7 @@ gulp.task(`clean`, function () {
 });
 
 gulp.task(`js`, () => {
-  return gulp.src([`src/js/index.js`])
+  return gulp.src([`src/js/main.js`])
       .pipe(debug({title: `debug`}))
       .pipe(plumber())
       .pipe(sourcemaps.init())
