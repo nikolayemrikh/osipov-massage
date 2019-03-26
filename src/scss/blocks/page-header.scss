@@ -1,5 +1,40 @@
 .page-header {
-  display: flex;
-  justify-content: space-between;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  background-color: $yellow--dark3;
 }
 
+.page-header__inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: $desktop-lg-width;
+  margin: 0 auto;
+
+  color: $gray--light3;
+}
+
+.page-header__caption-wrapper {
+  display: flex;
+
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-header__caption {
+  font-size: $font-size--h2;
+}
+
+.page-header__logo {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5%;
+
+  & svg {
+    fill: $gray--light7;
+    stroke: #ffffff;
+  }
+}

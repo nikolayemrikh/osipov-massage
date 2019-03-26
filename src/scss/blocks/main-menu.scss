@@ -16,3 +16,14 @@
 .main-menu__item > a {
   color: $blue--light4;
 }
+
+
+@media (min-width: $desktop-width) {
+  .main-menu__item {
+    padding: 10px 20px;
+
+    background: none;
+
+    border: none;
+  }
+}

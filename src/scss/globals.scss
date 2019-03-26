@@ -17,10 +17,12 @@ body {
 
   font-size: $font-size;
 
-  font-family: "Open Sans", "Arial", sans-serif;
+  line-height: $line-height;
+
+  font-family: $font--main;
 
   background-color: $bg-color;
-  // background-color: red;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {

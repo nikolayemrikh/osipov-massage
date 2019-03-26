@@ -25,12 +25,16 @@
 
     .main-nav__list {
       position: absolute;
-      top: 62px;
+      top: 60px;
       right: 0;
 
       display: flex;
     }
   }
+}
+
+.main-nav__link {
+  line-height: 35px;
 }
 
 .main-nav__list {
@@ -45,6 +49,9 @@
   width: 30px;
   height: 30px;
   padding: 15px 10px;
+
+  background: 0 0;
+  border: 0;
 }
 
 .main-nav__toggle-burger {
@@ -84,7 +91,7 @@
   }
 }
 
-@media (min-width: 650px) {
+@media (min-width: $tablet-width) {
   .main-nav__list {
     display: flex;
     flex-direction: row;
