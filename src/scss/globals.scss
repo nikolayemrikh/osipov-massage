@@ -21,12 +21,17 @@ body {
 
   font-family: $font--main;
 
-  background-color: $bg-color;
+  background-color: white;
   -webkit-tap-highlight-color: transparent;
 }
 
 a {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden {

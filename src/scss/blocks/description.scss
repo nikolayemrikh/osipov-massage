@@ -1,0 +1,64 @@
+.description {
+  background-color: $pink--light3;
+
+  border: 1px solid $clay;
+}
+
+.description__inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.description__text {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.description__name {
+  font-size: $font-size--h2;
+}
+
+.description__description-wrapper {
+  padding: 20px 0;
+
+  text-align: center;
+}
+
+.description__description {
+  margin: 0;
+}
+
+.description__contact {
+
+}
+
+.description__contact-button {
+  color: white;
+}
+
+.description__photo {
+  display: none;
+
+  text-align: center;
+}
+
+
+@media (min-width: $tablet-width) {
+  .description__photo {
+    display: block;
+    flex: 1 0 auto;
+  }
+
+  .description__text {
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 5%;
+  }
+
+  .description__description {
+    text-align: left;
+  }
+}

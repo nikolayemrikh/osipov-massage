@@ -8,13 +8,14 @@
 .main-menu__item {
   padding: 10px;
 
-  background-color: $blue--dark2;
+  background-color: $clay;
 
-  border: 1px solid $blue--dark3;
+  border-top: 1px solid $clay--light1;
+  border-bottom: 1px solid $clay--dark1;
 }
 
 .main-menu__item > a {
-  color: $blue--light4;
+  color: #ffffff;
 }
 
 

@@ -1,0 +1,36 @@
+.button {
+  display: inline-block;
+  max-width: 270px;
+  padding: 0.35em 1em;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: inherit;
+  vertical-align: middle;
+  text-align: center;
+  white-space: normal;
+  word-wrap: normal;
+
+  background-color: $orange;
+  border: 3px solid $orange;
+  border-radius: 0;
+
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.button--large {
+  padding: 0.7em 0.875em;
+
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.button--wide {
+  width: 270px;
+}
+
+.button--green {
+  background-color: #4eb543;
+  border-color: #4eb543;
+}
