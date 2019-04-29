@@ -6,23 +6,21 @@
   background-color: $clay;
 }
 
-.page-main__description {
+.page-main__section {
   width: 100%;
-
-  padding: 5%;
   // max-width: $desktop-lg-width;
   margin: 0 auto;
 }
 
 
 @media (min-width: $tablet-width) {
-  .page-main__description {
+  .page-main__section {
     max-width: $tablet-lg-width;
   }
 }
 
 @media (min-width: $desktop-width) {
-  .page-main__description {
+  .page-main__section {
     max-width: $desktop-lg-width;
   }
 }

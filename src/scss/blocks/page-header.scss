@@ -8,7 +8,8 @@
 .page-header__inner {
   display: flex;
   justify-content: space-between;
-  max-width: $desktop-lg-width;
+  // max-width: $desktop-lg-width;
+  width: 100%;
   margin: 0 auto;
 
   color: $gray--light3;
@@ -36,5 +37,17 @@
   & svg {
     fill: $gray--light7;
     stroke: #ffffff;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .page-header__inner {
+    max-width: $tablet-lg-width;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .page-header__inner {
+    max-width: $desktop-lg-width;
   }
 }

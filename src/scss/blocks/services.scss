@@ -1,0 +1,63 @@
+.services {
+  color: white;
+
+  background-color: $clay;
+  background-image: repeating-linear-gradient(-225deg, lighten($clay, 90%) 0, lighten($clay, 90%) 10px, $pink--light3 11px, $pink--light3 19px, lighten($clay, 90%) 20px);
+  background-repeat: repeat;
+
+  border: 1px solid $pink--light3;
+}
+
+.services__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  padding: 40px 5%;
+
+  @include list();
+}
+
+.services__list-item {
+  flex: 0 0 100%;
+  margin: 10px;
+  padding: 10px;
+
+  color: black;
+
+  background-color: $pink--light3;
+  border: 1px solid $clay--light10;
+  border-radius: 2px;
+}
+
+.services__inner {
+  display: flex;
+  justify-content: space-around;
+}
+
+.services__heading {
+  text-align: center;
+  color: black;
+}
+
+.services__name {
+  font-weight: bold;
+  font-size: $font-size--h3;
+}
+
+.services__price {
+  text-align: right;
+}
+
+@media (min-width: $tablet-width) {
+  .services__list-item {
+    flex-basis: 45%;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .services__list-item {
+    flex-basis: 30%;
+  }
+}

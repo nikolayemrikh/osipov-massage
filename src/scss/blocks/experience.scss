@@ -1,0 +1,27 @@
+.experience {
+  background-color: $pink--light3;
+
+  // border: 1px solid $clay;
+}
+
+.experience__heading {
+  text-align: center;
+}
+
+.experience__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding: 40px 5%;
+}
+
+.experience__list {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
+
+  @include list();
+}
+
