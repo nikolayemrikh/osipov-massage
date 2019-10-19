@@ -15,7 +15,7 @@
     "del": "^4.0.0",
     "eslint": "^5.14.1",
     "eslint-config-htmlacademy": "0.5.2",
-    "gh-pages": "2.0.1",
+    "gh-pages": "^2.0.1",
     "gulp": "4.0.x",
     "gulp-better-rollup": "^4.0.1",
     "gulp-csso": "^3.0.1",
@@ -46,7 +46,7 @@
     "test": "npm run stylelint",
     "build": "gulp build",
     "start": "gulp start",
-    "deploy": "npm run build && gh-pages -d ./build"
+    "deploy": "npm run build && gh-pages -d ./build -r https://github.com/osipovmassage/osipovmassage.github.io.git"
   },
   "browserslist": [
     "last 2 versions"

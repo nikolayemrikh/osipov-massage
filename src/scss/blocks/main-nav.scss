@@ -63,7 +63,7 @@
 
   vertical-align: bottom;
 
-  background: $yellow;
+  background-color: $yellow;
 
   transition: background 0.3s 0.5s;
 
@@ -87,7 +87,7 @@
     background: $yellow;
     transform-origin: 50% 50%;
 
-    transition: top 0.3s 0.3s, transform 0.3s;
+    // transition: top 0.3s 0.3s, transform 0.3s;
   }
 }
 
