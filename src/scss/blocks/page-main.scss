@@ -23,10 +23,17 @@
   margin: 0 auto;
 }
 
+.page-main__photos {
+  background-color: $color5;
+}
 
 @media (min-width: $tablet-width) {
   .page-main__section {
     max-width: $tablet-lg-width;
+  }
+
+  .page-main__photos {
+    display: none;
   }
 }
 
