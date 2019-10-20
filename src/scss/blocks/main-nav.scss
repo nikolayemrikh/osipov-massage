@@ -4,9 +4,9 @@
 
 .main-nav--shown {
   .main-nav__toggle-burger {
-    background: 0 0;
+    background-color: transparent;
 
-    transition: background 0.3s 0;
+    transition: background 0.3s 0.5s;
   }
 
   .main-nav__toggle-burger::before,
@@ -87,7 +87,7 @@
     background-color: $color3;
     transform-origin: 50% 50%;
 
-    // transition: top 0.3s 0.3s, transform 0.3s;
+    transition: top 0.3s 0.3s, transform 0.3s;
   }
 }
 
