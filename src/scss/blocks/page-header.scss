@@ -1,6 +1,6 @@
 .page-header {
-  padding-right: 10px;
-  padding-left: 10px;
+  // padding-right: 10px;
+  // padding-left: 10px;
 
   background-color: darken($color5, 10);
 }
@@ -11,6 +11,8 @@
   // max-width: $desktop-lg-width;
   width: 100%;
   margin: 0 auto;
+  padding-right: 10px;
+  padding-left: 20px;
 
   color: $gray--light3;
 }
@@ -25,6 +27,8 @@
 
 .page-header__caption {
   font-size: $font-size--h2;
+
+  color: $color1;
 }
 
 .page-header__logo {

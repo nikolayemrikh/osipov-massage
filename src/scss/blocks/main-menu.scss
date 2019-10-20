@@ -8,14 +8,14 @@
 .main-menu__item {
   padding: 10px;
 
-  background-color: $clay;
+  background-color: $color2;
 
-  border-top: 1px solid $clay--light1;
-  border-bottom: 1px solid $clay--dark1;
+  border-top: 1px solid lighten($color2, 5);
+  border-bottom: 1px solid darken($color2, 5);
 }
 
 .main-menu__item > a {
-  color: #ffffff;
+  color: $color1;
 }
 
 
