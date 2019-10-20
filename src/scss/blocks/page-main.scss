@@ -3,7 +3,18 @@
   flex-direction: column;
   align-items: center;
 
-  background-color: $clay;
+  // background-color: hsla(21%, 100%, 85%, 0.3);
+  color: $color5;
+
+  background-color: $color2;
+}
+
+.page-main__inner {
+  background-color: white;
+}
+
+.page-main__heading {
+  text-align: center;
 }
 
 .page-main__section {

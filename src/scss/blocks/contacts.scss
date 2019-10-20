@@ -1,0 +1,27 @@
+.contacts {
+  address {
+    font-style: normal;
+  }
+}
+
+.contacts__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  padding: 40px 5%;
+}
+
+.contacts__address {
+  margin-bottom: 10px;
+
+  white-space: nowrap;
+
+  a {
+    color: $color3;
+  }
+}
+
+.contacts__social-list {
+  justify-content: space-around;
+}

@@ -46,7 +46,7 @@
     "test": "npm run stylelint",
     "build": "gulp build",
     "start": "gulp start",
-    "deploy": "npm run build && gh-pages -d ./build -r https://github.com/osipovmassage/osipovmassage.github.io.git"
+    "deploy": "npm run build && gulp deploy"
   },
   "browserslist": [
     "last 2 versions"
@@ -55,6 +55,7 @@
     "node": "^8.16"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "normalize.css": "^8.0.1"
   }
 }

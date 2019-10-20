@@ -1,22 +1,31 @@
 .button {
   display: inline-block;
   max-width: 270px;
-  padding: 0.35em 1em;
+  padding: 0.5em 1em;
 
   font-weight: 400;
   font-size: 16px;
   line-height: inherit;
   vertical-align: middle;
   text-align: center;
+  color: $color1;
   white-space: normal;
   word-wrap: normal;
 
-  background-color: $orange;
-  border: 3px solid $orange;
-  border-radius: 0;
+  background-color: $color4;
+
 
   user-select: none;
   touch-action: manipulation;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color4, 5);
+  }
+
+  &:active {
+    background-color: darken($color4, 10);
+  }
 }
 
 .button--large {

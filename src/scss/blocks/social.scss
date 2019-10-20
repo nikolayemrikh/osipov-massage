@@ -1,0 +1,31 @@
+.social__list {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.social__link {
+  display: block;
+  width: 55px;
+  height: 55px;
+
+  svg {
+    fill: $color2;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: lighten($color4, 5);
+    }
+  }
+
+  &:active {
+    svg {
+      fill: darken($color4, 5);
+    }
+  }
+}

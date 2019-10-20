@@ -1,6 +1,8 @@
 @import "./normalize.scss";
 @import "./variables.scss";
+@import "./palette.scss";
 @import "./globals.scss";
+@import "./blocks/button.scss";
 @import "./blocks/page-header.scss";
 @import "./blocks/main-menu.scss";
 @import "./blocks/page-main.scss";
@@ -9,4 +11,5 @@
 @import "./blocks/description.scss";
 @import "./blocks/services.scss";
 @import "./blocks/experience.scss";
-@import "./blocks/button.scss";
+@import "./blocks/social.scss";
+@import "./blocks/contacts.scss"

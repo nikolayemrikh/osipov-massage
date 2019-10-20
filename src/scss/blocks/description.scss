@@ -1,12 +1,12 @@
 .description {
-  background-color: $pink--light3;
-
-  // border: 1px solid $clay;
+  h1 {
+    margin: 0;
+  }
 }
 
 .description__inner {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 40px 5%;
 }
 
@@ -19,24 +19,16 @@
 
 .description__name {
   font-size: $font-size--h2;
+  line-height: 32px;
 }
 
-.description__description-wrapper {
+.description__columns {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  width: 100%;
   padding: 20px 0;
-
-  text-align: center;
-}
-
-.description__description {
-  margin: 0;
-}
-
-.description__contact {
-
-}
-
-.description__contact-button {
-  color: white;
 }
 
 .description__photo {
@@ -45,21 +37,37 @@
   text-align: center;
 }
 
+.description__experience-list {
+  @include list;
+
+  padding: 20px;
+  color: $color1;
+  line-height: 24px;
+  background-color: $color5;
+}
 
 @media (min-width: $tablet-width) {
   .description__photo {
     display: block;
-    flex: 1 0 auto;
+    // flex: 1 0 auto;
   }
 
   .description__text {
-    flex: 1 1 auto;
+    // flex: 1 1 auto;
     justify-content: center;
     align-items: flex-start;
     padding: 0 5%;
   }
 
-  .description__description {
-    text-align: left;
+  .description__columns {
+    flex-direction: row;
   }
+
+  .description__columns-left {
+    margin-right: 8%;
+  }
+}
+
+@media (min-width: $tablet-lg-width) {
+
 }

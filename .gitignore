@@ -6,4 +6,6 @@ tests/report-lcovonly.txt
 build/
 .idea
 .DS_Store
+.vscode
 out
+.env

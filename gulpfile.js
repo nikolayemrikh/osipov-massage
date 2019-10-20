@@ -20,6 +20,8 @@ const nodeResolve = require(`rollup-plugin-node-resolve`);
 const commonjs = require(`rollup-plugin-commonjs`);
 const json = require(`rollup-plugin-json`);
 const sourcemaps = require(`gulp-sourcemaps`);
+const ghpages = require(`gh-pages`);
+require(`dotenv`).config();
 
 gulp.task(`css`, function () {
   return gulp.src(`src/scss/style.scss`)
@@ -141,3 +143,10 @@ gulp.task(`build`, gulp.series(
 ));
 
 gulp.task(`start`, gulp.series(`build`, `server`));
+
+gulp.task(`deploy`, (done) => {
+  ghpages.publish(`build`, {
+    repo: `https://` + process.env.GITHUB_TOKEN + `@github.com/osipovmassage/osipovmassage.github.io.git`, // eslint-disable-line
+    branch: `master`
+  }, done);
+});
