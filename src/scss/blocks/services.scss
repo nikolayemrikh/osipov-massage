@@ -4,34 +4,99 @@
   // background-repeat: repeat;
 
   // border: 1px solid $pink--light3;
+
+  h3 {
+    margin: 0;
+  }
 }
 
 .services__list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+  // justify-content: space-around;
 
-  padding: 40px 5%;
+  // padding: 40px 5%;
 
   @include list();
-}
+  margin: 20px 0;
 
-.services__list-item {
-  flex: 0 0 100%;
-  margin: 10px;
-  padding: 10px;
-
-  color: black;
-
-  background-color: $pink--light3;
-  border: 1px solid $clay--light10;
-  border-radius: 2px;
+  list-style: none;
 }
 
 .services__inner {
+  // background-color: hsl(228%, 3%, 90%);
+  background-color: $color5;
+}
+
+.sercives__heading {
+  color: $color1;
+}
+
+.services__list-item {
+  &:not(:first-of-type) {
+    margin-top: 10px;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}
+
+.services__list-item-btn {
+  padding: 0;
+
+  font-weight: 500;
+  color: inherit;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  svg {
+    margin-right: 5px;
+
+    vertical-align: middle;
+
+    fill: currentColor;
+  }
+}
+
+.services__list-item-description {
+  display: none;
+}
+
+.services__list-item--active .services__list-item-description {
+  display: block;
+}
+
+.services__list-item--active .services__list-item-btn {
+  svg {
+    transform: rotate(90deg);
+  }
+}
+
+.services__columns {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.services__column {
+  display: flex;
+  flex: 0 0 48%;
+  flex-direction: column;
+  min-height: 340px;
+  padding: 30px;
+
+  background-color: #ffffff;
+}
+
+.services__column:last-of-type {
+  margin-top: 20px;
 }
 
 .services__name {
@@ -40,17 +105,24 @@
 }
 
 .services__price {
-  text-align: right;
+  margin-top: auto;
+
+  font-weight: 500;
+  font-size: $font-size--big;
 }
 
 @media (min-width: $tablet-width) {
-  .services__list-item {
-    flex-basis: 45%;
+  .services__columns {
+    flex-direction: row;
+  }
+
+  .services__column:last-of-type {
+    margin-top: 0;
   }
 }
 
-@media (min-width: $desktop-width) {
-  .services__list-item {
-    flex-basis: 30%;
-  }
-}
+// @media (min-width: $desktop-width) {
+//   .services__list-item {
+//     flex-basis: 30%;
+//   }
+// }

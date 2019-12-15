@@ -8,16 +8,31 @@
 .main-menu__item {
   padding: 10px;
 
-  background-color: $color2;
+  background-color: $color3;
 
   border-top: 1px solid lighten($color2, 5);
   border-bottom: 1px solid darken($color2, 5);
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color3, 5);
+  }
+
+  &:active {
+    background-color: darken($color3, 10);
+  }
 }
 
 .main-menu__item > a {
   color: $color1;
 }
 
+
+@media (min-width: $tablet-width) {
+  .main-menu__item {
+    border: none;
+  }
+}
 
 @media (min-width: $desktop-width) {
   .main-menu__item {
@@ -26,5 +41,11 @@
     background: none;
 
     border: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: initial;
+    }
   }
 }

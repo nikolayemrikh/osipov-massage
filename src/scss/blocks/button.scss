@@ -43,3 +43,21 @@
   background-color: #4eb543;
   border-color: #4eb543;
 }
+
+.button-link {
+  color: $color4;
+  white-space: nowrap;
+
+  user-select: none;
+  touch-action: manipulation;
+
+
+  &:hover,
+  &:focus {
+    color: lighten($color4, 5);
+  }
+
+  &:active {
+    color: darken($color4, 10);
+  }
+}
